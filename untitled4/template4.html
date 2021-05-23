@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Template 1</title>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+
+    @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,700');
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    /*.burger-menu {*/
+    /*    position: relative;*/
+    /*    width: 600px;*/
+    /*}*/
+    .burger-menu_button {
+        position: absolute;
+        top: 0;
+        right: 3%;
+        z-index: 30;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        -webkit-transition: 0.4s;
+        -moz-transition: 0.4s;
+        -o-transition: 0.4s;
+        transition: 0.4s;
+    }
+    .burger-menu_button:hover .burger-menu_lines {
+        filter: brightness(0.7);
+    }
+
+    .burger-menu_button:hover {
+        background-color: rgba(255, 255, 255, 0.7);
+    }
+
+    .burger-menu_lines::before,
+    .burger-menu_lines::after,
+    .burger-menu_lines {
+        position: absolute;
+        width: 50px;
+        height: 3px;
+        background-color: black;
+        -webkit-transition: 0.4s;
+        -moz-transition: 0.4s;
+        -o-transition: 0.4s;
+        transition: 0.4s;
+    }
+    .burger-menu_lines {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .burger-menu_lines::before {
+        content: '';
+        top: -12px;
+    }
+    .burger-menu_lines::after {
+        content: '';
+        top: 12px;
+    }
+
+
+    .burger-menu_active .burger-menu_lines {
+        background-color: transparent;
+    }
+    .burger-menu_active .burger-menu_lines::before {
+        top: 0;
+        transform: rotate(45deg);
+    }
+    .burger-menu_active .burger-menu_lines::after{
+        top: 0;
+        transform: rotate(-45deg);
+    }
+
+    .burger-menu_nav {
+        margin-top: 120px;
+        padding-top: 5px;
+        position: absolute;
+        top: -100%;
+        left: 12.5%;
+        height: 180px;
+        width: 450px;
+        z-index: 20;
+        display: flex;
+        flex-flow: column;
+        background-color: rgba(0, 0, 0, 0.69);
+        -webkit-transition: 0.8s;
+        -moz-transition: 0.8s;
+        -o-transition: 0.8s;
+        transition: 0.8s;
+        overflow: hidden;
+    }
+    .burger-menu_active .burger-menu_nav {
+        top: 100px;
+        right: 20%;
+        -webkit-transition: 0.4s;
+        -moz-transition: 0.4s;
+        -o-transition: 0.4s;
+        transition: 0.4s;
+    }
+    .burger-menu_title {
+        font-family: 'Roboto', sans-serif;
+        font-size: 32px;
+        font-weight: 400;
+        color: white;
+        text-align: center;
+        margin: 30px 0 -30px 0;
+    }
+    .burger-menu_buttonWrapper {
+        display: flex;
+        justify-content: space-between;
+        margin: 55px 35px;
+    }
+    .burger-menu_buttonWrapper .burger-menu_buttonBottom {
+        padding: 10px 0;
+        font-family: 'Roboto', sans-serif;
+        font-size: 18px;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-weight: 400;
+        color: white;
+        border: 1px solid #fff;
+        margin: 0 10px;
+        background: transparent;
+        min-width: 150px;
+        text-align: center;
+    }
+    .burger-menu_buttonBottom:hover {
+        filter: brightness(0.9);
+    }
+
+
+
+    .templateFour {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        padding-bottom: 50px;
+        font-family: Comic Sans MS, Comic Sans, cursive;
+        position: relative;
+    }
+    .templateFour__header__stripe {
+        height: 80px;
+        width: 100%;
+        background-color: white;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .templateFour__header__stripe img {
+        margin: 0 15px;
+        cursor: pointer;
+    }
+
+    .templateFour_header__image {
+        margin: 0 auto;
+        position: relative;
+    }
+    .templateFour_header__image .image-abs-text {
+        font-family: 'Oswald', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 60px;
+        line-height: 110px;
+        color: #29394D;
+        width: 100%;
+        padding: 0px 0;
+        background: rgba(232, 220, 206, 0.68);
+        position: absolute;
+        bottom: 20px;
+        text-align: center;
+        visibility: visible;
+        transition: 300ms all ease-in-out;
+    }
+    
+    .templateFour_header__image .inactive {
+        visibility: hidden;
+    }
+    .templateFour_header__image .image-abs-text span {
+        font-weight: 100;
+    }
+    .templateFour_header__image img {
+        width: 100%;
+        max-width: 600px;
+        max-height: 600px;
+        object-fit: cover;
+        margin-bottom: -4.5px;
+    }
+    .templateFour_header__text {
+        font-family: Roboto Condensed,serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 30px;
+        line-height: 170.19%;
+        text-align: center;
+        color: #034044;
+        margin: 20px 40px -10px 40px;
+    }
+    .templateFour_header__buttonWrapper  button {
+        border: 2px solid white;
+        border-radius: 15px;
+        background-color: transparent;
+        padding: 10px 60px;
+        font-size: 17px;
+        color: white;
+        margin: 20px auto;
+        transition: 500ms all ease-in-out;
+        outline: none;
+        font-family: Roboto Condensed,serif;
+    }
+    .templateFour_header__buttonWrapper button:hover {
+        box-shadow: 0 7px 20px -7px white;
+    }
+
+
+    .templateFour_main {
+        display: flex;
+        justify-content: center;
+    }
+    .templateFour_main__itemsWrapper {
+        width: 100%;
+    }
+    .templateFour_main__itemsWrapper .item {
+        margin: 0 -2px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .templateFour_main__itemsWrapper .item .item_image {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        max-width: 50%;
+    }
+    .templateFour_main__itemsWrapper .item .item_image img {
+        width: 100%;
+        object-fit: contain;
+        position: relative;
+        transition: 500ms all ease-in-out;
+    }
+    /* .templateFour_main__itemsWrapper .item .item_image img:hover {
+        transform: rotateY(180deg);
+    } */
+    .templateFour_main__itemsWrapper .item .item_image .image {
+        width: 100%;
+        max-height: 350px;
+        object-fit: contain;
+        position: relative;
+    }
+
+    .templateFour_main__itemsWrapper .item_info {
+        width: 50%;
+        font-family: Roboto;
+    }
+    .templateFour_main__itemsWrapper .item_info .title {
+        width: 100%;
+        padding: 0 50px;
+    }
+    .templateFour_main__itemsWrapper .item_info .m-t-1 {
+        margin-top: -45px;
+    }
+    .templateFour_main__itemsWrapper .item_info .second-title {
+        width: 100%;
+        padding: 0 70px;
+        margin-top: -30px;
+    }
+    .templateFour_main__itemsWrapper .item_info .text {
+        font-size: 22px;
+        text-align: center;
+        margin: 0 0 30px 0;
+        font-weight: 500;
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+    .templateFour_main__itemsWrapper .item_info .custom-text {
+        font-size: 30px;
+    }
+    .templateFour_main__itemsWrapper .item_info .border {
+        border: 1px solid black;
+        padding: 10px 0;
+        margin: 0 30px 10px 30px;
+    }
+
+    .templateFour_main__itemsWrapper .item_info .m-b-0 {
+        margin-bottom: -20px;
+        margin-top: -50px;
+    }
+    .templateFour_main__itemsWrapper .item_info .m-b-1 {
+        margin-bottom: -20px;
+        margin-top: -60px;
+    }
+    .templateFour_main__itemsWrapper .item_info .text span {
+        font-style: normal;
+        font-size: 140px;
+        line-height: 237px;
+        font-weight: 500;
+        font-family: 'Oswald', sans-serif;
+        color: #29394D;
+    }
+    .templateFour_main__itemsWrapper .item_info .text .percent {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 60px;
+        line-height: 107px;
+        font-family: 'Oswald', sans-serif;
+        color: #29394D;
+    }
+    .templateFour_main__itemsWrapper .item_info .buttonWrapper {
+        display: flex;
+        justify-content: center;
+    }
+    .templateFour_main__itemsWrapper .item_info .button {
+        padding: 10px 55px;
+        background-color: transparent;
+        border: none;
+        font-size: 28px;
+        background-color: #E9E0D1;
+        transition: 500ms all ease-in-out;
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+    .templateFour_main__itemsWrapper .item_info .button:hover {
+        box-shadow: 0 7px 20px -7px #E9E0D1;
+    }
+    .templateFour_footer {
+        width: 100%;
+        background: rgba(233, 221, 207, 0.18);
+        padding: 50px 0;
+    }
+    .templateFour_footer .title {
+        font-family: Arial;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 27px;
+        line-height: 31px;
+        color: #000000;
+        text-align: center;
+    }
+    .templateFour_footer .img-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+    .templateFour_footer .img-wrapper img {
+        margin: 20px 10px;
+        width: 35px;
+        height: 35px;
+    }
+    .templateFour_footer .items-wrapper {
+        display: flex;
+        justify-content: center;
+        border-bottom: 1px solid #000000;
+        padding: 3px 0 15px 0;
+    }
+    .templateFour_footer .items-wrapper .item-top {
+        font-family: Arial;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 18px;
+        color: #000000;
+        margin: 0 20px;
+        cursor: pointer;
+    }
+    .templateFour_footer .bottom-items-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
+    }
+    .templateFour_footer .bottom-items-wrapper .item-bottom {
+        font-family: Arial;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 16px;
+        color: #999999;
+        margin: 0 20px;
+    }
+
+    @-webkit-keyframes fade {
+        from {
+            opacity: .2
+        }
+        to {
+            opacity: 1
+        }
+    }
+    @keyframes fade {
+        from {
+            opacity: .2
+        }
+        to {
+            zoom: 1;
+            opacity: 1
+        }
+    }
+</style>
+<body>
+    <div class="templateFour">
+        <div class="burger-menu">
+            <a href="" class="burger-menu_button">
+                <spun class="burger-menu_lines"></spun>
+            </a>
+            <nav class="burger-menu_nav">
+               <div class="burger-menu_title">SALE FOR</div>
+                <div class="burger-menu_buttonWrapper">
+                    <button 
+                    class="burger-menu_buttonBottom" 
+                    onclick="changeIMG('img/man2.png', 'img/man1.png')"
+                    >
+                        MAN
+                    </button>
+                    <button 
+                    class="burger-menu_buttonBottom" 
+                    onclick="changeIMG('img/woman2.png', 'img/woman1.png')"
+                    >
+                        WOMAN
+                    </button>
+                </div>
+            </nav>
+        </div>
+        <section class="templateFour_header">
+            <div class="templateFour__header__stripe">
+                <img src="img/Group%2022.png" alt="" style="width: 174px; height: 56px;">
+                <img src="img/Group%2023.png" alt="" style="width: 125px; height: 32px;">
+            </div>
+            <div class="templateFour_header__image">
+                <img src="img/wide-image.png" />
+                <div class="image-abs-text">ЗНИЖКИ <span>ДО</span> 60%</div>
+            </div>
+        </section>
+        <section class="templateFour_main">
+            <div class="templateFour_main__itemsWrapper">
+                <div class="item">
+                    <div class="item_image" id="item_image-man">
+                        <img src="img/woman1.png" />
+                    </div>
+                    <div class="item_info">
+                        <img src="img/topshop-1-logo-png-transparent%202.png" class="second-title" />
+                        <p class="text custom-text m-b-0">
+                            до 
+                            <span>65</span>
+                            <span class="percent">%</span>
+                        </p>
+                        <p class="text border">Промокод: ХОЧУВСЕ</p>
+                        <div class="buttonWrapper">
+                            <button class="button">Обрати річ</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item_info">
+                        <img src="img/image%2042.png" class="title m-t-1" />
+                        <p class="text custom-text m-b-1">до <span>65</span><span class="percent">%</span></p>
+                        <p class="text border">Промокод: ХОЧУВСЕ</p>
+                        <div class="buttonWrapper">
+                            <button class="button">Обрати річ</button>
+                        </div>
+                    </div>
+                    <div class="item_image" id="item_image-woman">
+                        <img src="img/woman2.png" />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="templateFour_footer">
+            <div class="title">
+                CONNECT WITH THEMUSE
+            </div>
+            <div class="img-wrapper">
+                <img src="img/telegram.png" />
+                <img src="img/instagram.png" />
+                <img src="img/facebook.png" />
+            </div>
+            <div class="items-wrapper">
+                <div class="item-top">VIEW IN BROWSER</div>
+                <div class="item-top">TERMS</div>
+                <div class="item-top">UNSUBSCRIBE</div>
+            </div>
+            <div class="bottom-items-wrapper">
+                <div class="item-bottom">DAILY MUSE INC.</div>
+                <div class="item-bottom">151 WEST 25TH STREET</div>
+                <div class="item-bottom">NEW YORK, NY 10001</div>
+            </div>
+        </section>
+        </div>
+    </div>
+<script type="application/javascript">
+    
+
+
+
+    function burgerMenu(selector) {
+        let menu = $(selector);
+        let button = menu.find('.burger-menu_button', '.burger-menu_lines');
+        let links = menu.find('.burger-menu_link');
+        let overlay = menu.find('.burger-menu_overlay');
+        let text = $('.templateFour_header__image').find('.image-abs-text');
+
+        button.on('click', (e) => {
+            e.preventDefault();
+            toggleMenu();
+        });
+
+        links.on('click', () => toggleMenu());
+        overlay.on('click', () => toggleMenu());
+
+        function toggleMenu(){
+            menu.toggleClass('burger-menu_active');
+            text.toggleClass('inactive');
+
+            if (menu.hasClass('burger-menu_active')) {
+                $('body').css('overlow', 'hidden');
+            } else {
+                $('body').css('overlow', 'visible');
+            }
+        }
+    }
+
+    burgerMenu('.burger-menu');
+</script>
+<script type="text/javascript">
+    
+    var imgWoman = document.getElementById("item_image-woman").getElementsByTagName("img")[0]; //получаем большую картинку.
+    
+    var imgMan = document.getElementById("item_image-man").getElementsByTagName("img")[0];
+    console.log(img);
+    function changeIMG(str1, str2){
+        imgWoman.setAttribute('src', str1);
+        imgMan.setAttribute('src', str2);
+    }
+   </script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+</body>
+</html>

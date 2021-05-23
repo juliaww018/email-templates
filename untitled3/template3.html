@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Template 1</title>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    .templateThree {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        padding-bottom: 50px;
+        font-family: 'Open Sans', sans-serif;
+        position: relative;
+    }
+    .templateThree_header__image {
+        margin: 0 auto;
+        opacity: .8;
+        position: relative;
+    }
+    .templateThree_header__image .text-after-top {
+        font-family: 'Indie Flower', cursive;
+        font-weight: normal;
+        font-size: 45px;
+        line-height: 169px;
+        text-align: center;
+        color: #F9F9F9;
+        position: absolute;
+        top: -45px;
+        left: 222px;
+    }
+    .templateThree_header__image .text-after-bottom {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 33px;
+        line-height: 128px;
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+        color: #F9F9F9;
+        position: absolute;
+        top: 15px;
+        left: 195px;
+    }
+    .templateThree_header__image img {
+        width: 100%;
+        max-width: 600px;
+        max-height: 600px;
+        object-fit: contain;
+    }
+    .templateThree_header__body {
+        width: 472px;
+        margin: -5px auto 0 auto;
+        background-color: #e2dccf;
+        padding-bottom: 30px;
+    }
+    .templateThree_header__title {
+        font-family: 'Open Sans', sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 25px;
+        text-align: center;
+        letter-spacing: 0.125em;
+        color: #000000;
+        text-align: center;
+        max-width: 100%;
+        margin-top: 0;
+        padding-top: 25px;
+        margin-bottom: 5px;
+    }
+    .templateThree_header__text {
+        font-family: 'Open Sans', sans-serif;
+        font-style: italic;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 19px;
+        text-align: center;
+        letter-spacing: 0.125em;
+
+        color: #000000;
+        text-align: center;
+        color: #034044;
+        margin: 15px 40px -10px 40px;
+    }
+    .templateThree_header__buttonWrapper {
+        display: flex;
+        justify-content: center;
+    }
+    .templateThree_header__buttonWrapper button {
+        background: url("img/confeta.png");
+        background-repeat: round;
+	    width: 260px;
+    	height: 70px;
+        border: none;
+        padding: 10px 60px;
+        font-size: 17px;
+        color: white;
+        margin: 10px auto -10px auto;
+        transition: 500ms all ease-in-out;
+        outline: none;
+        font-family: 'Open Sans', sans-serif;
+        opacity: 0;
+    }
+
+    .bottom-image {
+        width: 100%;
+        max-width: 472px;
+        object-fit: contain;
+        margin-left: 64px;
+        margin-bottom: -5px;
+    }
+
+    @-webkit-keyframes fade {
+        from {
+            opacity: .2
+        }
+        to {
+            opacity: 1
+        }
+    }
+    @keyframes fade {
+        from {
+            opacity: .2
+        }
+        to {
+            zoom: 1;
+            opacity: 1
+        }
+    }
+    @keyframes fadeIn {
+        from { opacity: 0;}
+        to   {
+            opacity: 1;
+            display: block;
+        }
+    }
+</style>
+<body>
+    <div class="templateThree">
+        <section class="templateThree_header">
+            <img class="bottom-image" src="img/Group%20126.png" />
+            <div class="templateThree_header__image">
+                <img src="img/didmoroz.gif" />
+                <div class="text-after-top">30% off</div>
+                <div class="text-after-bottom">
+                    EVERYTHING
+                </div>
+            </div>
+            <div class="templateThree_header__body">
+                <h5 class="templateThree_header__title">
+                    ONLINE AND IN-STORE
+                </h5>
+                <div class="templateThree_header__buttonWrapper">
+                    <button id="showButton" type="button">GO, GO, GO!</button>
+                </div>
+                <h5 class="templateThree_header__title">
+                    USE CODE, SAVE 30
+                </h5>
+                <p class="templateThree_header__text">
+                    Excludes rugs and pillows.
+                </p>
+            </div>
+            <img class="bottom-image" src="img/Group%20124.png" />
+        </section>
+    </div>
+    <script>
+        const updateTime = function() {
+            showButton.style.opacity="1";
+        };
+        setTimeout(updateTime,5220);
+        clearTimeout(updateTime);
+    </script>
+</body>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+</html>
