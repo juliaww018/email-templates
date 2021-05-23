@@ -243,28 +243,29 @@
     .slider .prev, .slider .next {
         cursor: pointer;
         position: absolute;
-        top: 136%;
-        width: 100p;
+        top: 125%;
+        width: auto;
         margin-top: -22px;
         padding: 16px;
         right: auto;
-        left: 26%;
-        color: #2AB7ED;
-        font-weight: 300;
-        font-size: 45px;
+        left: 27%;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
         transition: 0.6s ease;
         border-radius: 3px 0 0 3px;
     }
     .slider .next {
-        right: 26%;
+        right: 27%;
         left: auto;
-        top: 136%;
+        top: 125%;
         border-radius: 0 3px 3px 0;
     }
     /* При наведении на кнопки добавляем фон кнопок */
     .slider .prev:hover,
     .slider .next:hover {
-        color: #C153DA;
+        background-color: #2d2889;
+        opacity: 0.7;
     }
     /* Кружочки */
     .slider-dots {
@@ -308,36 +309,18 @@
             opacity: 1
         }
     }
-
-
-    .timer {
-		position: relative;
-        display: flex;
-        justify-content: center;
-        margin-bottom: 20px;
-	}
-    .timer .stripe {
-        position: absolute;
-        width: 250px;
-        height: 20px;
-        bottom: 0;
-        left: 15%;
-        background-color: #040406;
-    }
-	
 </style>
 <body>
     <div class="templateOne">
         <section class="templateOne_header">
-            <img class="logo" src="img/Group 92.png" />
             <div class="templateOne_header__image">
-                <img src="img/giff.gif" />
+                <img src="img/header-image.gif" />
             </div>
             <h2 class="templateOne_header__title">
-                5 <span>Days Only!</span>
+                5 Days Only!
             </h2>
             <p class="templateOne_header__text">
-                Designmodo subscriptions sale! Looking to take your Wevsite and Email building to the next level?
+                Designmodo subscriptions sale! Looking to take your <span>Wevsite</span> and <span>Email building</span> to the next level?
             </p>
             <a href="#" class="templateOne_header__link">USE COUPON CODE</a>
             <div class="templateOne_header__buttonWrapper">
@@ -380,15 +363,19 @@
                     <a class="prev" onclick="minusSlide()">&#10094;</a>
                     <a class="next" onclick="plusSlide()">&#10095;</a>
                 </div>
+                <div class="slider-dots">
+                    <span class="slider-dots_item" onclick="currentSlide(1)"></span>
+                    <span class="slider-dots_item" onclick="currentSlide(2)"></span>
+                    <span class="slider-dots_item" onclick="currentSlide(3)"></span>
+                </div>
             </div>
         </section>
         <section class="templateOne_footer">
             <div class="templateOne_footer__subtitle">
                 HURRY UP! PROMOTION ENDS ON
             </div>
-            <div class="timer">
-                <img src="http://s.mmgo.io/t/CCGv" alt="motionmailapp.com" />
-                <div class="stripe"></div>
+            <div class="templateOne_footer__title">
+                JULY 31
             </div>
             <button type="button" class="templateOne_footer__button green">
                 View All Tools
@@ -400,72 +387,10 @@
                 *Not to be combined with any other offers.
             </div>
         </section>
-        <img class="footer-image" src="img/Group 83.png" />
         </div>
     </div>
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script>
-
-function timer(f_time) {
-		function timer_go() {
-			var n_time = Date.now();
-			var diff = f_time - n_time;
-			if(diff <= 0) return false;
-			var left = diff % 1000;
-	
-			//секунды
-			diff = parseInt(diff / 1000);
-			var s = diff % 60;
-			if(s < 10) {
-				$(".seconds_1").html(0);
-				$(".seconds_2").html(s);
-			}else {
-				$(".seconds_1").html(parseInt(s / 10));
-				$(".seconds_2").html(s % 10);
-			}
-			//минуты
-			diff = parseInt(diff / 60);
-			var m = diff % 60;
-			if(m < 10) {
-				$(".minutes_1").html(0);
-				$(".minutes_2").html(m);
-			}else {
-				$(".minutes_1").html(parseInt(m / 10));
-				$(".minutes_2").html(m % 10);
-			}
-			//часы
-			diff = parseInt(diff / 60);
-			var h = diff % 24;
-			if(h < 10) {
-				$(".hours_1").html(0);
-				$(".hours_2").html(h);
-			}else {
-				$(".hours_1").html(parseInt(h / 10));
-				$(".hours_2").html(h % 10);
-			}
-			//дни
-			var d = parseInt(diff / 24);
-			if(d < 10) {
-				$(".days_1").html(0);
-				$(".days_2").html(d);
-			}else {
-				$(".days_1").html(parseInt(d / 10));
-				$(".days_2").html(d % 10);
-			}
-			setTimeout(timer_go, left);
-		}
-		setTimeout(timer_go, 0);
-	}
-	
-	$(document).ready(function() {
-		var time = $(".timer").attr("data-finish");
-		timer(time);
-	});
-
-
-
-
-
         /* Индекс слайда по умолчанию */
         var slideIndex = 1;
         showSlides(slideIndex);
