@@ -6,6 +6,8 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </head>
@@ -16,34 +18,62 @@
     .templateOne {
         width: 100%;
         max-width: 600px;
-        background-color: #04021a;
+        background-color: #040406;
         margin: 0 auto;
-        padding-bottom: 50px;
+        padding-bottom: 30px;
         font-family: Comic Sans MS, Comic Sans, cursive;
+    }
+    .templateOne_header {
+        padding-top: 30px;
+    }
+    .templateOne_header .logo {
+        margin-left: 45%;
     }
     .templateOne_header__image {
         margin: 0 auto;
     }
     .templateOne_header__image img {
         width: 100%;
-        margin-top: 30px;
     }
     .templateOne_header__title {
-        color: white;
-        font-size: 30px;
-        margin: -35px 50px 20px 50px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 70px;
+        line-height: 85px;
+        color: #C153DA;
+        margin: -35px 50px 0 50px;
         text-align: center;
+        font-family: 'Open Sans', sans-serif;
+    }
+    .templateOne_header__title span {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 48px;
+        color: #C153DA;
+        font-family: 'Open Sans', sans-serif;
     }
     .templateOne_header__text {
-        color: #5049ff;
-        margin: 0 50px 50px 50px;
+        font-family: 'Open Sans', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 28px;
+        text-align: center;
+        color: #FFFFFF;
+        margin: 0 50px 15px 50px;
         text-align: center;
     }
     .templateOne_header__text span {
         color: white;
     }
     .templateOne_header__link {
-        color: #2d2889;
+        font-family: 'Open Sans', sans-serif;
+        color: white;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 40px;
+        text-align: center;
         margin: 0 auto;
         display: block;
         text-align: center;
@@ -54,13 +84,17 @@
         justify-content: center;
     }
     .templateOne_header__buttonWrapper  button {
-        border: 2px solid white;
-        border-radius: 15px;
-        background-color: transparent;
-        padding: 10px 60px;
-        font-size: 17px;
-        color: white;
-        margin: 20px auto;
+        border: none;
+        font-family: 'Open Sans', sans-serif;
+        background: radial-gradient(100% 2047.19% at 0% 50.82%, #16C4EC 0%, #A6B5E2 25.52%, #D5387D 50%, #E05969 76.04%, #DDA338 100%);
+        border-radius: 5px;
+        padding: 10px 55px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 30px;
+        line-height: 49px;
+        color: #FFFFFF;
+        margin: 10px auto;
         transition: 500ms all ease-in-out;
         outline: none;
     }
@@ -72,9 +106,12 @@
     .templateOne_main {
         display: flex;
         justify-content: center;
+        margin-top: 60px;
     }
     .templateOne_main__itemsWrapper {
-        width: 450px;
+        width: 420px;
+        padding: 0 10px;
+        background: radial-gradient(77.57% 78.76% at 14.07% 22.61%, #18C3EF 0%, #C153DA 100%);
     }
     .templateOne_main__itemsWrapper .item {
         margin: 40px 0;
@@ -86,30 +123,47 @@
     .templateOne_main__itemsWrapper .item_image img {
         width: 75%;
         object-fit: contain;
+        border: 7pz solid black;
     }
     .templateOne_main__itemsWrapper .item_title {
-        color: white;
-        font-size: 25px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 36px;
+        line-height: 49px;
+        font-family: 'Open Sans', sans-serif;
+        color: #000000;
         text-align: center;
-        margin: 15px 0 0 0;
+        margin: 20px 0 0 0;
     }
     .templateOne_main__itemsWrapper .item_text {
-        color: #2d2889;
+        font-family: 'Open Sans', sans-serif;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 33px;
+        text-align: center;
+
+        color: #000000;
         text-align: center;
         margin-top: 5px;
+        margin-bottom: 20px;
     }
     .templateOne_main__itemsWrapper .item_buttonWrapper {
         display: flex;
         justify-content: center;
     }
     .templateOne_main__itemsWrapper .item_buttonWrapper .item_button {
-        background-color: green;
-        font-size: 17px;
+        font-family: 'Open Sans', sans-serif;
+        background: #000000;
+        border-radius: 9px;
+        font-style: normal;
+        font-size: 25px;
+        line-height: 45px;
+        color: #FFFFFF;
         color: white;
-        font-weight: 500;
-        padding: 20px 40px;
+        font-weight: 600;
+        padding: 10px 40px;
         border: none;
-        border-radius: 12px;
         cursor: pointer;
         outline: none;
         transition: 500ms all ease-in-out;
@@ -123,10 +177,14 @@
         padding: 0 40px;
     }
     .templateOne_footer__subtitle {
-        font-size: 20px;
-        color: #2d2889;
-        font-weight: bold;
-        margin: 30px 30px 15px 30px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 33px;
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+        color: #FFFFFF;
+        margin: 40px 30px 40px 30px;
         text-align: center;
     }
     .templateOne_footer__title {
@@ -137,26 +195,46 @@
         text-align: center;
     }
     .templateOne_footer__text {
-        font-size: 16px;
-        color: #2d2889;
+        font-family: 'Open Sans', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 17px;
+        text-align: center;
+        color: #FFFFFF;
         text-align: center;
     }
     .templateOne_footer__button {
         width: 100%;
         border: none;
         outline: none;
-        border-radius: 50px;
-        font-size: 18px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 30px;
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+        color: #FFFFFF;
         padding: 15px 20px;
         margin: 10px 0;
+        cursor: pointer;
     }
     .green {
-        background-color: green;
-        color: white;
+        border: 3px solid #C153DA;
+        box-sizing: border-box;
+        border-radius: 5px;
+        background: transparent;
     }
     .blue {
-        background-color: #8383c4;
-        color: white;
+        border: 3px solid #32B2EC;
+        box-sizing: border-box;
+        border-radius: 5px;
+        background: transparent;
+    }
+    .footer-image {
+        width: 600px;
+        object-fit: contain;
+        margin-top: 50px;
     }
 
 
@@ -165,29 +243,28 @@
     .slider .prev, .slider .next {
         cursor: pointer;
         position: absolute;
-        top: 125%;
-        width: auto;
+        top: 136%;
+        width: 100p;
         margin-top: -22px;
         padding: 16px;
         right: auto;
-        left: 27%;
-        color: white;
-        font-weight: bold;
-        font-size: 18px;
+        left: 26%;
+        color: #2AB7ED;
+        font-weight: 300;
+        font-size: 45px;
         transition: 0.6s ease;
         border-radius: 3px 0 0 3px;
     }
     .slider .next {
-        right: 27%;
+        right: 26%;
         left: auto;
-        top: 125%;
+        top: 136%;
         border-radius: 0 3px 3px 0;
     }
     /* При наведении на кнопки добавляем фон кнопок */
     .slider .prev:hover,
     .slider .next:hover {
-        background-color: #2d2889;
-        opacity: 0.7;
+        color: #C153DA;
     }
     /* Кружочки */
     .slider-dots {
@@ -231,18 +308,36 @@
             opacity: 1
         }
     }
+
+
+    .timer {
+		position: relative;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+	}
+    .timer .stripe {
+        position: absolute;
+        width: 250px;
+        height: 20px;
+        bottom: 0;
+        left: 15%;
+        background-color: #040406;
+    }
+	
 </style>
 <body>
     <div class="templateOne">
         <section class="templateOne_header">
+            <img class="logo" src="img/Group 92.png" />
             <div class="templateOne_header__image">
-                <img src="img/header-image.gif" />
+                <img src="img/giff.gif" />
             </div>
             <h2 class="templateOne_header__title">
-                5 Days Only!
+                5 <span>Days Only!</span>
             </h2>
             <p class="templateOne_header__text">
-                Designmodo subscriptions sale! Looking to take your <span>Wevsite</span> and <span>Email building</span> to the next level?
+                Designmodo subscriptions sale! Looking to take your Wevsite and Email building to the next level?
             </p>
             <a href="#" class="templateOne_header__link">USE COUPON CODE</a>
             <div class="templateOne_header__buttonWrapper">
@@ -285,19 +380,15 @@
                     <a class="prev" onclick="minusSlide()">&#10094;</a>
                     <a class="next" onclick="plusSlide()">&#10095;</a>
                 </div>
-                <div class="slider-dots">
-                    <span class="slider-dots_item" onclick="currentSlide(1)"></span>
-                    <span class="slider-dots_item" onclick="currentSlide(2)"></span>
-                    <span class="slider-dots_item" onclick="currentSlide(3)"></span>
-                </div>
             </div>
         </section>
         <section class="templateOne_footer">
             <div class="templateOne_footer__subtitle">
                 HURRY UP! PROMOTION ENDS ON
             </div>
-            <div class="templateOne_footer__title">
-                JULY 31
+            <div class="timer">
+                <img src="http://s.mmgo.io/t/CCGv" alt="motionmailapp.com" />
+                <div class="stripe"></div>
             </div>
             <button type="button" class="templateOne_footer__button green">
                 View All Tools
@@ -309,10 +400,72 @@
                 *Not to be combined with any other offers.
             </div>
         </section>
+        <img class="footer-image" src="img/Group 83.png" />
         </div>
     </div>
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script>
+
+function timer(f_time) {
+		function timer_go() {
+			var n_time = Date.now();
+			var diff = f_time - n_time;
+			if(diff <= 0) return false;
+			var left = diff % 1000;
+	
+			//секунды
+			diff = parseInt(diff / 1000);
+			var s = diff % 60;
+			if(s < 10) {
+				$(".seconds_1").html(0);
+				$(".seconds_2").html(s);
+			}else {
+				$(".seconds_1").html(parseInt(s / 10));
+				$(".seconds_2").html(s % 10);
+			}
+			//минуты
+			diff = parseInt(diff / 60);
+			var m = diff % 60;
+			if(m < 10) {
+				$(".minutes_1").html(0);
+				$(".minutes_2").html(m);
+			}else {
+				$(".minutes_1").html(parseInt(m / 10));
+				$(".minutes_2").html(m % 10);
+			}
+			//часы
+			diff = parseInt(diff / 60);
+			var h = diff % 24;
+			if(h < 10) {
+				$(".hours_1").html(0);
+				$(".hours_2").html(h);
+			}else {
+				$(".hours_1").html(parseInt(h / 10));
+				$(".hours_2").html(h % 10);
+			}
+			//дни
+			var d = parseInt(diff / 24);
+			if(d < 10) {
+				$(".days_1").html(0);
+				$(".days_2").html(d);
+			}else {
+				$(".days_1").html(parseInt(d / 10));
+				$(".days_2").html(d % 10);
+			}
+			setTimeout(timer_go, left);
+		}
+		setTimeout(timer_go, 0);
+	}
+	
+	$(document).ready(function() {
+		var time = $(".timer").attr("data-finish");
+		timer(time);
+	});
+
+
+
+
+
         /* Индекс слайда по умолчанию */
         var slideIndex = 1;
         showSlides(slideIndex);
