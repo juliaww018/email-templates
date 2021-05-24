@@ -401,6 +401,64 @@
             opacity: 1
         }
     }
+
+
+ body, button[type="submit"] {
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+}
+ *, *:before, *:after {
+	 box-sizing: border-box;
+}
+ button[type="submit"] {
+	 width: 185px;
+	 height: 50px;
+	 background: transparent;
+	 border-radius: 10px;
+	 will-change: transform;
+	 transition: all 0.2s ease;
+	 border: 2px solid #ff5126;
+	 cursor: pointer;
+	 color: #fff;
+	 font-size: 16px;
+	 color: #ff5126;
+	 outline: none;
+	 text-align: center;
+}
+ button[type="submit"]:hover {
+	 background: #95f100;
+	 color: #fff;
+}
+ button[type="submit"]:active {
+	 font-size: 15px;
+	 transform: translateY(1px);
+}
+ button[type="submit"].active {
+	 font-size: 0;
+	 border-radius: 25px;
+	 width: 50px;
+	 background: transparent;
+}
+ button[type="submit"].loader {
+	 border-right: 2px solid #fff;
+	 animation: loader 0.4s linear infinite;
+}
+ button[type="submit"].success {
+	 background: #3bb873;
+	 border-color: #3bb873;
+	 font-size: 14px;
+	 color: #fff;
+}
+ @keyframes loader {
+	 0% {
+		 transform: rotateZ(0);
+	}
+	 100% {
+		 transform: rotateZ(360deg);
+	}
+}
+ 
 </style>
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 </head>
@@ -501,7 +559,7 @@
                 </tr>
             </table>
             <div class="templateTwo_footer__buttonWrapper">
-                <button type="button" class="footer_button">Відправити</button>
+                <button type="submit" class="footer_button">Відправити</button>
             </div>
             <div class="templateTwo_footer__image">
                 <img src="img/Group%2072.png" />
@@ -510,6 +568,36 @@
         </div>
     </div>
        <script>
+            $(document).ready(() => {
+	let $button = $('button[type="submit"]');
+	
+	$button.on('click', function() {
+		var $this = $(this);
+		if($this.hasClass('active') || $this.hasClass('success')) {
+			return false;
+		}
+		$this.addClass('active');
+		setTimeout(()=> {
+			$this.addClass('loader');
+		}, 125);
+		setTimeout(()=> {
+			$this.removeClass('loader active');
+			$this.text('Success');
+			$this.addClass('success animated pulse');
+		}, 1600);
+	});
+});
+
+
+
+
+
+
+
+
+
+
+
             $('#first-clicked-image').css('display', 'none');
             $( "#first-click-label" ).click(function() {
                 $("#first-clicked-image").toggleClass("highlight");

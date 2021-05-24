@@ -324,6 +324,106 @@
         left: 15%;
         background-color: #040406;
     }
+
+
+
+
+
+
+    .fill:hover, .fill:focus {
+	 box-shadow: inset 0 0 0 2em var(--hover);
+}
+ .pulse:hover, .pulse:focus {
+	 animation: pulse 1s;
+	 box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+}
+ @keyframes pulse {
+	 0% {
+		 box-shadow: 0 0 0 0 var(--hover);
+	}
+}
+ .close:hover, .close:focus {
+	 box-shadow: inset -3.5em 0 0 0 var(--hover), inset 3.5em 0 0 0 var(--hover);
+}
+ .raise:hover, .raise:focus {
+	 box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+	 transform: translateY(-0.25em);
+}
+ .up:hover, .up:focus {
+	 box-shadow: inset 0 -3.25em 0 0 var(--hover);
+}
+.up-two:hover, .up-two:focus {
+	 box-shadow: inset 0 -3.25em 0 0 var(--hover);
+}
+ .slide:hover, .slide:focus {
+	 background: inset 6.5em 0 0 0 var(--hover);
+}
+ .offset {
+	 box-shadow: 0.3em 0.3em 0 0 var(--color), inset 0.3em 0.3em 0 0 var(--color);
+}
+ .offset:hover, .offset:focus {
+	 box-shadow: 0 0 0 0 var(--hover), inset 6em 3.5em 0 0 var(--hover);
+}
+ .fill {
+	 --color: #a972cb;
+	 --hover: #cb72aa;
+}
+ .pulse {
+	 --color: #ef6eae;
+	 --hover: #ef8f6e;
+}
+ .close {
+	 --color: #ff7f82;
+	 --hover: radial-gradient(100% 2047.19% at 0% 50.82%, #16C4EC 0%, #A6B5E2 25.52%, #D5387D 50%, #E05969 76.04%, #DDA338 100%);
+}
+ .raise {
+	 --color: #ffa260;
+	 --hover: #50006e;
+}
+ .up {
+	 --color: #000;
+	 --hover: #C153DA;
+}
+.up-two {
+	 --color: #000;
+	 --hover: #32B2EC;
+}
+ .slide {
+	 --color: #8fc866;
+	 --hover: #66c887;
+}
+ .offset {
+	 --color: #19bc8b;
+	 --hover: #1973bc;
+}
+ button {
+	 color: var(--color);
+	 transition: 0.25s;
+}
+ button:hover, button:focus {
+	 border-color: var(--hover);
+	 color: #fff;
+}
+ body {
+	 color: #fff;
+	 background: #17181c;
+	 font: 300 1em 'Fira Sans', sans-serif;
+	 justify-content: center;
+	 align-content: center;
+	 align-items: center;
+	 text-align: center;
+	 min-height: 100vh;
+	 display: flex;
+}
+ button {
+	 background: none;
+	 border: 2px solid;
+	 font: inherit;
+	 line-height: 1;
+	 margin: 0.5em;
+	 padding: 1em 2em;
+}
+ 
 	
 </style>
 <body>
@@ -354,7 +454,7 @@
                         <h4 class="item_title">Startup</h4>
                         <p class="item_text">Build a website using the Bootstrap builder and templates</p>
                         <div class="item_buttonWrapper">
-                            <button type="button" class="item_button">Get 50% Off</button>
+                            <button type="button" class="item_button close">Get 50% Off</button>
                         </div>
                     </div>
                     <div class="item">
@@ -364,7 +464,7 @@
                         <h4 class="item_title">Postcards</h4>
                         <p class="item_text">Create responsive emails with a simple drag&drop simplicity</p>
                         <div class="item_buttonWrapper">
-                            <button type="button" class="item_button">Get 50% Off</button>
+                            <button type="button" class="item_button close">Get 50% Off</button>
                         </div>
                     </div>
                     <div class="item">
@@ -374,7 +474,7 @@
                         <h4 class="item_title">Slides</h4>
                         <p class="item_text">Impress your audience with animated web presentations</p>
                         <div class="item_buttonWrapper">
-                            <button type="button" class="item_button">Get 50% Off</button>
+                            <button type="button" class="item_button close">Get 50% Off</button>
                         </div>
                     </div>
                     <a class="prev" onclick="minusSlide()">&#10094;</a>
@@ -390,10 +490,10 @@
                 <img src="http://s.mmgo.io/t/CCGv" alt="motionmailapp.com" />
                 <div class="stripe"></div>
             </div>
-            <button type="button" class="templateOne_footer__button green">
+            <button type="button" class="templateOne_footer__button green up">
                 View All Tools
             </button>
-            <button type="button" class="templateOne_footer__button blue">
+            <button type="button" class="templateOne_footer__button blue up-two">
                 Set a Reminder
             </button>
             <div class="templateOne_footer__text">
@@ -403,7 +503,7 @@
         <img class="footer-image" src="img/Group 83.png" />
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script>
 
 function timer(f_time) {

@@ -146,6 +146,130 @@
             display: block;
         }
     }
+
+
+
+
+    .button {
+	 /* background: #eb1f48; */
+	 /* border-radius: 5px; */
+	 /* color: white; */
+	 cursor: pointer;
+	 /* font-family: Roboto; */
+	 /* font-size: 1.9em; */
+	 /* height: 65px; */
+	 /* letter-spacing: 0.2px;
+	 line-height: 65px;
+	 text-align: center;
+	 text-transform: uppercase;
+	 user-select: none;
+	 width: 150px; */
+}
+ /* .button:hover {
+	 background: #ec3257;
+}
+ .button:active {
+	 box-shadow: inset 0px 2px 8px -1px #d7143b;
+} */
+ .fancy-button {
+	 margin: auto;
+	 position: relative;
+}
+ .frills, .frills:after, .frills:before {
+	 position: absolute;
+	 background: #eb1f48;
+	 border-radius: 4px;
+	 height: 8px;
+}
+ .frills:after, .frills:before {
+	 content: "";
+	 display: block;
+}
+ .frills:before {
+	 bottom: 45px;
+}
+ .frills:after {
+	 top: 45px;
+}
+ .left-frills {
+	 right: 274px;
+	 top: 40px;
+}
+ .active .left-frills {
+	 animation: move-left 0.38s ease-out, width-to-zero 0.38s ease-out;
+}
+ .left-frills:before, .left-frills:after {
+	 left: 15px;
+}
+ .active .left-frills:before {
+	 animation: width-to-zero 0.38s ease-out, move-up 0.38s ease-out;
+}
+ .active .left-frills:after {
+	 animation: width-to-zero 0.38s ease-out, move-down 0.38s ease-out;
+}
+ .right-frills {
+	 left: 274px;
+	 top: 40px;
+}
+ .active .right-frills {
+	 animation: move-right 0.38s ease-out, width-to-zero 0.38s ease-out;
+}
+ .right-frills:before, .right-frills:after {
+	 right: 15px;
+}
+ .active .right-frills:before {
+	 animation: width-to-zero 0.38s ease-out, move-up 0.38s ease-out;
+}
+ .active .right-frills:after {
+	 animation: width-to-zero 0.38s ease-out, move-down 0.38s ease-out;
+}
+ .left-frills:before, .right-frills:after {
+	 transform: rotate(34deg);
+}
+ .left-frills:after, .right-frills:before {
+	 transform: rotate(- 34deg);
+}
+ @keyframes move-left {
+	 0% {
+		 transform: none;
+	}
+	 65% {
+		 transform: translateX(-80px);
+	}
+	 100% {
+		 transform: translateX(-80px);
+	}
+}
+ @keyframes move-right {
+	 0% {
+		 transform: none;
+	}
+	 65% {
+		 transform: translateX(80px);
+	}
+	 100% {
+		 transform: translateX(80px);
+	}
+}
+ @keyframes width-to-zero {
+	 0% {
+		 width: 38px;
+	}
+	 100% {
+		 width: 8px;
+	}
+}
+ @keyframes move-up {
+	 100% {
+		 bottom: 69.75px;
+	}
+}
+ @keyframes move-down {
+	 100% {
+		 top: 69.75px;
+	}
+}
+ 
 </style>
 <body>
     <div class="templateThree">
@@ -162,9 +286,12 @@
                 <h5 class="templateThree_header__title">
                     ONLINE AND IN-STORE
                 </h5>
-                <div class="templateThree_header__buttonWrapper">
-                    <button id="showButton" type="button">GO, GO, GO!</button>
+                <div class="templateThree_header__buttonWrapper fancy-button">
+                    <div class="left-frills frills"></div>
+                    <button id="showButton" type="button" class="button">GO, GO, GO!</button>
+                    <div class="right-frills frills"></div>
                 </div>
+            
                 <h5 class="templateThree_header__title">
                     USE CODE, SAVE 30
                 </h5>
@@ -181,6 +308,16 @@
         };
         setTimeout(updateTime,1000);
         clearTimeout(updateTime);
+    </script>
+    <script>
+        $(function(){
+  $(".fancy-button").mousedown(function(){
+    $(this).bind('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', function(){
+        $(this).removeClass('active');
+    })
+     $(this).addClass("active");
+  });
+});
     </script>
 </body>
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
