@@ -338,7 +338,7 @@
         font-family: 'Source Sans Pro', sans-serif;
     }
     .templateFour_main__itemsWrapper .item_info .button:hover {
-        box-shadow: 0 7px 20px -7px #E9E0D1;
+        box-shadow: 0 0 0 0 var(--hover), inset 6em 3.5em 0 0 var(--hover);
     }
     .templateFour_footer {
         width: 100%;
@@ -412,6 +412,89 @@
         }
     }
 
+
+    .fill:hover, .fill:focus {
+	 box-shadow: inset 0 0 0 2em var(--hover);
+}
+ .pulse:hover, .pulse:focus {
+	 animation: pulse 1s;
+	 box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+}
+ @keyframes pulse {
+	 0% {
+		 box-shadow: 0 0 0 0 var(--hover);
+	}
+}
+ .close:hover, .close:focus {
+	 box-shadow: inset -3.5em 0 0 0 var(--hover), inset 3.5em 0 0 0 var(--hover);
+}
+ .raise:hover, .raise:focus {
+	 box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+	 transform: translateY(-0.25em);
+}
+ .up:hover, .up:focus {
+	 box-shadow: inset 0 -3.25em 0 0 var(--hover);
+}
+.up-two:hover, .up-two:focus {
+	 box-shadow: inset 0 -3.25em 0 0 var(--hover);
+}
+ .slide:hover, .slide:focus {
+	 background: inset 6.5em 0 0 0 var(--hover);
+}
+ .offset {
+	 box-shadow: 0.2em 0.2em 0 0 var(--color), inset 0.2em 0.2em 0 0 var(--color);
+}
+ .offset:hover, .offset:focus {
+	 box-shadow: 0 0 0 0 var(--hover), inset 6em 3.5em 0 0 var(--hover);
+}
+ .fill {
+	 --color: #a972cb;
+	 --hover: #cb72aa;
+}
+ .pulse {
+	 --color: #ef6eae;
+	 --hover: #ef8f6e;
+}
+ .close {
+	 --color: #ff7f82;
+	 --hover: radial-gradient(100% 2047.19% at 0% 50.82%, #16C4EC 0%, #A6B5E2 25.52%, #D5387D 50%, #E05969 76.04%, #DDA338 100%);
+}
+ .raise {
+	 --color: #ffa260;
+	 --hover: #50006e;
+}
+ .up {
+	 --color: #000;
+	 --hover: #C153DA;
+}
+.up-two {
+	 --color: #000;
+	 --hover: #32B2EC;
+}
+ .slide {
+	 --color: #8fc866;
+	 --hover: #66c887;
+}
+ .offset {
+	 --color: #29394D;
+	 --hover: #29394D;
+}
+ button {
+	 color: var(--color);
+	 transition: 0.25s;
+}
+ button:hover, button:focus {
+	 border-color: var(--hover);
+	 color: #fff;
+}
+ button {
+	 background: none;
+	 border: 2px solid;
+	 font: inherit;
+	 line-height: 1;
+	 margin: 0.5em;
+	 padding: 1em 2em;
+}
     
     
 </style>
@@ -462,37 +545,9 @@
                             <span>65</span>
                             <span class="percent">%</span>
                         </p>
-                        <!-- <p class="text border">Промокод: ХОЧУВСЕ</p> -->
-                        <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="goo">
-                              <defs>
-                                <filter id="goo">
-                                  <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                                  <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
-                                  <feComposite in="SourceGraphic" in2="goo"/>
-                                </filter>
-                              </defs>
-                            </svg>
-                            
-                            <span class="button--bubble__container">
-                              <a href="#campaign" class="button button--bubble">
-                                Промокод: ХОЧУВСЕ
-                              </a>
-                              <span class="button--bubble__effect-container">
-                                <span class="circle top-left"></span>
-                                <span class="circle top-left"></span>
-                                <span class="circle top-left"></span>
-                            
-                                <span class="button effect-button"></span>
-                            
-                                <span class="circle bottom-right"></span>
-                                <span class="circle bottom-right"></span>
-                                <span class="circle bottom-right"></span>
-                              </span>
-                            </span>
-                            </div>
+                        <p class="text border">Промокод: ХОЧУВСЕ</p>
                         <div class="buttonWrapper">
-                            <button class="button">Обрати річ</button>
+                            <button class="button offset">Обрати річ</button>
                         </div>
                     </div>
                 </div>
@@ -502,7 +557,7 @@
                         <p class="text custom-text m-b-1">до <span>65</span><span class="percent">%</span></p>
                         <p class="text border">Промокод: ХОЧУВСЕ</p>
                         <div class="buttonWrapper">
-                            <button class="button">Обрати річ</button>
+                            <button class="button offset">Обрати річ</button>
                         </div>
                     </div>
                     <div class="item_image" id="item_image-woman">
